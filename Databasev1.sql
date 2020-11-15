@@ -1,0 +1,65 @@
+CREATE TABLE `users` (
+  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `username` varchar(255),
+  `password` varchar(255),
+  `phone` varchar(255),
+  `role` int DEFAULT 0,
+  `isAuthenticity` boolean DEFAULT false
+);
+
+CREATE TABLE `address` (
+  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `idUser` int,
+  `fullname` varchar(255),
+  `phone` varchar(255),
+  `city` varchar(255),
+  `district` varchar(255),
+  `wards` varchar(255),
+  `detail` varchar(255)
+);
+
+ALTER TABLE `address` ADD FOREIGN KEY (`idUser`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+
+CREATE TABLE `product` (
+  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `name` varchar(255),
+  `image` varchar(255),
+  `price` double,
+  `describe` varchar(255),
+  `warehouse` int,
+  `categoryId` int
+);
+
+CREATE TABLE `category` (
+  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `name` varchar(255)
+);
+
+ALTER TABLE  `product` ADD FOREIGN KEY  (`categoryId`) REFERENCES  `category` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+
+CREATE TABLE `productOrder` (
+  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `idOrder` int,
+  `idProduct` int,
+  `quanity` int
+);
+
+CREATE TABLE `order` (
+  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `idUser` int,
+  `idListProduct` int,
+  `idAddress` int,
+  `status` int,
+  `totalPrice` double
+);
+
+
+ALTER TABLE `productOrder` ADD FOREIGN KEY (`idProduct`) REFERENCES `product` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE `order` ADD FOREIGN KEY (`idUser`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE `order` ADD FOREIGN KEY (`idListProduct`) REFERENCES `productOrder` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE `order` ADD FOREIGN KEY (`idAddress`) REFERENCES `address` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
