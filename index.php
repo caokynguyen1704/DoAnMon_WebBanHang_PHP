@@ -15,7 +15,16 @@
 </head>
 <body>
 <?php include 'api/nav.php'; ?>
-<?php include 'api/newproduct.php'; ?>
+<?php 
+if (!(isset($_GET['search']))){
+    include 'api/newproduct.php';
+    echo '<br>';
+    include 'api/navcategory.php';
+}
+else{
+    require 'api/search.php';
+}
+?>
 </body>
 </html>
 <?php ob_flush(); ?>
