@@ -37,7 +37,7 @@ foreach ( $rows as $row ) {
                 <p class="detail">'.$row['name'].'
                 </p>
                 <div class="cart">
-                    <a href="#">'.change($row['price']).' VNĐ </a>
+                    <a href="./?product='.$row['id'].'">'.change($row['price']).' VNĐ </a>
                 </div>
             </div>
         </div>';

@@ -10,12 +10,14 @@
     <script src="js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/StyleForPC.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style1.css">
     <link  rel="stylesheet" href="css/swiper.min.css"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
 <body>
 <?php include 'api/nav.php'; ?>
 <?php 
+if (!(isset($_GET['product']))){
 if (!(isset($_GET['search']))){
     include 'api/newproduct.php';
     echo '<br>';
@@ -23,6 +25,9 @@ if (!(isset($_GET['search']))){
 }
 else{
     require 'api/search.php';
+}}
+else{
+    require 'api/product.php';
 }
 ?>
 </body>
