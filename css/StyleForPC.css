@@ -1,3 +1,22 @@
 @media (min-width: 992px) {
-	
+	.bg-color-grey{
+        background-color: gray;
+    }
+    .remove-border{
+        border-width:0px;
+        border:none;
+        box-shadow: none;
+    }
+    input:focus {outline:none!important;}
+    .bg-color-white{
+        background-color: white;
+    }
+    .search{
+        padding: 5px 5px 5px 5px;
+    }
+}
+@media (max-width: 991px){
+    .notPhone{
+        display: none;
+    }
 }
