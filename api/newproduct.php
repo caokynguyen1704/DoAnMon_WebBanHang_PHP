@@ -16,7 +16,7 @@
 function change($t){
     $kq="";
     for ($i=strlen($t)-1;$i>=0;$i--){
-        if (((strlen($t)-$i-1)%3==0)){
+        if ((((strlen($t)-$i-1)%3==0))&&(($i!=strlen($t)-1))){
             $kq=$t[$i].".".$kq;
         }else{
             $kq=$t[$i].$kq;
