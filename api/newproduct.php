@@ -1,6 +1,6 @@
 <?php
     require 'pdo.php';
-    $stmt = $pdo->query("SELECT * FROM product ORDER BY id DESC");
+    $stmt = $pdo->query("SELECT * FROM product ORDER BY id DESC LIMIT 6");
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
     function change($t){
         $kq="";

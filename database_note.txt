@@ -1,3 +1,35 @@
 https://dbdiagram.io/d/5fae8aac3a78976d7b7bcb53
 
-INSERT INTO `product`(`name`, `image`, `price`, `describe`, `warehouse`, `categoryId`) VALUES ("Samsung A71","https://didongmogi.com/wp-content/uploads/2020/06/galaxy-a71-trang-didongviet_1_1_1-510x510.jpg","2900000","Một sản phẩm thực sự đột phá, Samsung Galaxy A71 là tổng hòa của những công nghệ cao cấp nhất hiện nay với bộ 4 camera sau 64MP, màn hình 6,7 inch Full HD+ mãn nhãn và thời lượng pin trên cả tuyệt vời.",4,1)
+INSERT INTO 
+    `product`
+    (`name`, `image`, `price`, `describe`, `warehouse`, `categoryId`) 
+VALUES
+    ("Samsung A71",
+    "https://didongmogi.com/wp-content/uploads/2020/06/galaxy-a71-trang-didongviet_1_1_1-510x510.jpg",
+    "2900000",
+    "Một sản phẩm thực sự đột phá, Samsung Galaxy A71 là tổng hòa của những công nghệ cao cấp nhất hiện nay với bộ 4 camera sau 64MP, màn hình 6,7 inch Full HD+ mãn nhãn và thời lượng pin trên cả tuyệt vời.",
+    4,
+    1)
+
+
+INSERT INTO 
+    `product`
+    (`name`, `image`, `price`, `describe`, `warehouse`, `categoryId`) 
+VALUES
+    ("iPhone 11 Pro Max 64GB",
+    "https://cdn1.viettelstore.vn/Images/Product/ProductImage/1760267593.jpeg",
+    "26490000",
+    "Được cho là mẫu điện thoại smartphone cao cấp nhất và tốt nhất ra mắt trong thời điểm này, iPhone 11 Pro Max là smartphone nhiều camera nhất và màn hình lớn nhất tính đến thời điểm hiện tại. Nhờ sở hữu nhiều ưu điểm nổi bật trong thiết kế, màn hình, hệ thống âm thanh mạnh mẽ, khả năng chụp hình, thời lượng pin cao cùng bộ vi xử lý được nâng cấp táo bạo.",
+    50,
+    1)
+
+INSERT INTO 
+    `product`
+    (`name`, `image`, `price`, `describe`, `warehouse`, `categoryId`) 
+VALUES
+    ("Samsung Galaxy Note20 Ultra 5G",
+    "https://cdn1.viettelstore.vn/Images/Product/ProductImage/1760267593.jpeg",
+    "29990000",
+    "Galaxy Note 20 Ultra 5G là chiếc smartphone mạnh mẽ nhất trong bộ ba Galaxy Note 20 Series ra mắt năm nay khi ở phiên bản này, cấu hình cũng như tính năng được nâng cấp rất đặc biệt.",
+    3,
+    1)

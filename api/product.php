@@ -27,7 +27,11 @@
             <h6><b>TRONG KHO:   </b>'. $rows[0]["warehouse"].'</h6>
             <h6><b>Miêu tả:</b></h6>
             <p>'. $rows[0]["describe"].'</p>
-            <button type="button" class="btn btn-primary btn-lg btn-block "><i class="fa fa-cart-plus fa-2x" aria-hidden="true"></i></button>
+            <button type="button" class="btn btn-primary btn-lg btn-block ';
+            if ($rows[0]["warehouse"]==0){
+                echo "disabled";
+            }
+            echo'"><i class="fa fa-cart-plus fa-2x" aria-hidden="true"></i></button>
         </div>
         </div>';
     }

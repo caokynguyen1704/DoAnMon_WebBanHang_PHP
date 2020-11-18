@@ -13,7 +13,7 @@
   <?php
     foreach ( $rows as $row ) {
     echo '<li class="nav-item">
-        <a class="nav-link" href="#section'.$row['id'].'">'.$row['name'].'</a>
+        <a class="nav-link of-btn'.$row['id'].'" href="#">'.$row['name'].'</a>
     </li>';
     }
     ?>
@@ -26,11 +26,11 @@
     $stmt1 = $pdo->prepare($sql1);
     $stmt1->execute(array(':id' =>$row['id']));
     $rows1 = $stmt1->fetchAll(PDO::FETCH_ASSOC);
-    echo '<div class="bg-color-gray">
-        <a class="nav-link" name="section'.$row['id'].'">'.$row['name'].'</a>
-    </div>';
+    // echo '<div class="bg-color-gray">
+    //     <a class="nav-link" name="'.$row['name'].'">'.$row['name'].'</a>
+    // </div>';
     echo '
-    <div class="container of'.$row['id'].'">
+    <div class="of'.$row['id'].'"  style="display:none;">
       <div class="swiper-container">';
       foreach ($rows1 as $row1){
         echo '
@@ -50,5 +50,16 @@
       </div>
     </div>
     ';
+    echo "<script type='text/javascript'>";
+    for ($i=0;$i<count($rows);$i++){
+      echo "$('.of-btn".$rows[$i]['id']."').click(function(e){\n$('.of".$rows[$i]['id']."').show();\n";
+      for ($j=0;$j<count($rows);$j++){
+        if ($i!=$j){
+          echo "$('.of".$rows[$j]['id']."').hide();\n";
+        }
+      }
+      echo "});\n";
+    }
+    echo "</script>";
   }
 ?>
