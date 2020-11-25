@@ -13,11 +13,18 @@
     </div>
     <div class="col-2"></div>
     <div class="col-sm">
-        <a src="#" class="btn btn-secondary"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-
-        <a src="#" class="btn btn-secondary">Đăng Nhập</a>
-
+<a src="#" onclick="if($('.cartorder').css('display')=='none') {$('.cartorder').show();$('.login').hide();}else{$('.cartorder').hide();}" class="btn btn-secondary"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+<a src="#" onclick="if($('.login').css('display')=='none'){$('.login').show();$('.cartorder').hide();}else{$('.login').hide();}" class="btn btn-secondary">Đăng Nhập</a>
     </div>
   </div>
     
 </nav>
+<div class="container-fluid cartorder" 
+  style="background-color: #cbcba9; ;display: none ;position:absolute; width:90%; height:80%; padding: 5px; left: 5%; box-shadow: 5px 5px 8px grey;">
+This is cart
+</div>
+
+<div class="container-fluid login" 
+  style="background-color: #cbcba9; ;display: none ;position:absolute; width:90%; height:80%; padding: 5px; left: 5%; box-shadow: 5px 5px 8px grey;">
+This is login
+</div>
