@@ -47,6 +47,5 @@ This is cart
 
 <div class="container-fluid login" 
   style="position:absolute; z-index:2 ;background-color: #cbcba9; ;display: none ; width:90%; height:80%; padding: 5px; left: 5%; box-shadow: 5px 5px 8px grey;">
-This is login
 <?php require 'login.php'; ?>
 </div>

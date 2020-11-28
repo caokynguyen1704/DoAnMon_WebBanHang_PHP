@@ -27,6 +27,7 @@
             }
             ?>
         </form>
+        <p>Chưa có tài khoản? <a href="#">Đăng ký</a></p>
     </center>
 </div>
 <?php
