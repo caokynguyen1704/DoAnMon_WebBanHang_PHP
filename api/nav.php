@@ -42,7 +42,7 @@
 </nav>
 <div class="container-fluid cartorder" 
   style="position:absolute;z-index:2; background-color: #cbcba9; ;display: none ; width:90%; height:80%; padding: 5px; left: 5%; box-shadow: 5px 5px 8px grey;">
-This is cart
+  <?php require 'cart.php'; ?>
 </div>
 
 <div class="container-fluid login" 

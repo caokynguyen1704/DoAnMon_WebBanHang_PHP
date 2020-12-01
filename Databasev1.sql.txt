@@ -43,6 +43,7 @@ CREATE TABLE `productOrder` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
   `idOrder` int,
   `idProduct` int,
+  `price` double,
   `quanity` int
 );
 

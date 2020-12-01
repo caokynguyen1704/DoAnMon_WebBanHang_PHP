@@ -11,7 +11,7 @@
     return $kq;
     }
     require 'pdo.php';
-    $sql = 'SELECT * FROM product WHERE id = :id LIMIT 6';
+    $sql = 'SELECT * FROM product WHERE id = :id';
     $stmt = $pdo->prepare($sql);
     $stmt->execute(array(':id' =>$_GET['product']));
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -27,12 +27,24 @@
             <h6><b>TRONG KHO:   </b>'. $rows[0]["warehouse"].'</h6>
             <h6><b>Miêu tả:</b></h6>
             <p>'. $rows[0]["describe"].'</p>
-            <button type="button" class="btn btn-primary btn-lg btn-block ';
+            <form method="POST">
+            <input type="hidden" name="productAdd" value="1"/>
+            <button type="submit" class="btn btn-primary btn-lg btn-block ';
             if ($rows[0]["warehouse"]==0){
                 echo "disabled";
             }
             echo'"><i class="fa fa-cart-plus fa-2x" aria-hidden="true"></i></button>
+            </form>
         </div>
         </div>';
+    }
+?>
+
+<?php
+    require 'addCart.php';
+    if (isset($_POST['productAdd'])){
+        addCart($rows[0]['id'],$rows[0]['name'],1,$rows[0]['price'],$rows[0]['image']);
+        header( 'Location: ./index.php' ) ;
+        return;
     }
 ?>
