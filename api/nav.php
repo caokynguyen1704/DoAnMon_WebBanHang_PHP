@@ -13,7 +13,14 @@
     </div>
     <div class="col-2"></div>
     <div class="col-sm">
-      
+<?php if ((isset($_SESSION['role']))){
+    if ($_SESSION['role']==0){
+        echo "<a href='#' onclick='btnlogin()' class='btn btn-secondary'><i class='fa fa-user' aria-hidden='true'></i></a>";
+        }elseif($_SESSION['role']==1){
+          echo "<a href='#' onclick='btnlogin()' class='btn btn-secondary'><i class='fa fa-address-card' aria-hidden='true'></i></a>";
+        }
+  }
+?>      
 <a src='#' onclick='btncart()' class='btn btn-secondary'><i class='fa fa-shopping-cart' aria-hidden='true'></i></a>
 <?php if (!(isset($_SESSION['user_id']))){
         echo "<a src='#' onclick='btnlogin()' class='btn btn-secondary'>Đăng Nhập</a>";
@@ -47,5 +54,6 @@
 
 <div class="container-fluid login" 
   style="position:absolute; z-index:2 ;background-color: #cbcba9; ;display: none ; width:90%; height:80%; padding: 5px; left: 5%; box-shadow: 5px 5px 8px grey;">
-<?php require 'login.php'; ?>
+  
+  <?php if (isset($_SESSION['role'])) { require 'mode.php';} else {require 'login.php';} ?>
 </div>

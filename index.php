@@ -28,8 +28,11 @@
 <!-- https://app.smartsupp.com/app/dashboard/conversations/coHyYWWWzHk18 -->
 </head>
 <body>
+
+<?php require 'api/loadRole.php'; ?>
 <?php include 'api/nav.php'; ?>
 <?php 
+
 if (!(isset($_GET['product']))){
 if (!(isset($_GET['search']))){
     include 'api/newproduct.php';
@@ -42,6 +45,25 @@ else{
 else{
     require 'api/product.php';
 }
+?>
+<?php
+//session_start();
+ if (isset($_GET['delProduct'])){
+        
+        if (isset($_SESSION['json'])){
+            for ($i=0;$i<count($_SESSION['json']);$i++){
+                    if ($_SESSION['json'][$i]['id']==$_GET['delProduct']){
+                        $_SESSION['json'][$i]['id']=-1;
+                    break;
+                    }
+                }
+               // print_r($_SESSION['json']);
+        }
+        
+         header( 'Location: ./index.php' ) ;
+          return;
+    }
+
 ?>
 </body>
 </html>

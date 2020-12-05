@@ -33,3 +33,26 @@ VALUES
     "Galaxy Note 20 Ultra 5G là chiếc smartphone mạnh mẽ nhất trong bộ ba Galaxy Note 20 Series ra mắt năm nay khi ở phiên bản này, cấu hình cũng như tính năng được nâng cấp rất đặc biệt.",
     3,
     1)
+
+
+    INSERT INTO 
+    `product`
+    (`name`, `image`, `price`, `describe`, `warehouse`, `categoryId`) 
+VALUES
+    ("Samsung Galaxy M51",
+    "https://cdn.tgdd.vn/Products/Images/42/217536/samsung-galaxy-m51-white-400x400-400x400.png",
+    "9490000",
+    "Samsung lại tiếp tục cho ra mắt chiếc smartphone mới thuộc thế hệ Galaxy M với tên gọi là Samsung Galaxy M51. Thiết kế mới này tuy nằm trong phân khúc tầm trung nhưng được Samsung nâng cấp và cải tiến với camera góc siêu rộng, dung lượng pin siêu khủng cùng vẻ ngoài sang trọng và thời thượng.",
+    99,
+    1)
+
+    INSERT INTO 
+    `product`
+    (`name`, `image`, `price`, `describe`, `warehouse`, `categoryId`) 
+VALUES
+    ("iPhone 7 128GB",
+    "https://cdn.tgdd.vn/Products/Images/42/87837/iphone-7-128gb-4-400x460.png",
+    "8990000",
+    "iPhone 7 là chiếc smartphone có thiết kế kim loại nguyên khối cuối cùng của Apple, nhưng đồng thời lại sở hữu “hàng tá” tính năng mới xuất hiện lần đầu như: nút home cảm ứng lực, khả năng kháng bụi nước, âm thanh stereo 2 kênh. Và đặc biệt, hiệu năng từ con chip A10 Fusion vẫn tỏ ra rất ổn định ở thời điểm hiện tại.",
+    99,
+    1)
