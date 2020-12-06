@@ -1,4 +1,4 @@
-CREATE DATABASE dvhc;
+-- CREATE DATABASE dvhc;
 
 -- phpMyAdmin SQL Dump
 -- version 4.6.5.2
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `dia_gioi_hanh_chinh`
+-- Cơ sở dữ liệu: `dvhc`
 --
 
 -- --------------------------------------------------------
