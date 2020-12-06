@@ -67,9 +67,32 @@ function change1($t){
                     <div class="col-sm">
                         ';
 echo "<b>TỔNG: ".($sotien)." VNĐ</b>";
-                        
+                        echo '<br><h3>Địa chỉ thanh toán</h3>';
+                        require 'pdo.php';
+                        $sql_vAddress = 'SELECT * FROM address WHERE idUser = :id';
+                        $stmt_vAddress = $pdo->prepare($sql_vAddress);
+                        $stmt_vAddress->execute(array(':id' =>$_SESSION['user_id']));
+                        $rows_vAdress = $stmt_vAddress->fetchAll(PDO::FETCH_ASSOC);
+                        echo "<form method='POST'>";
+                        echo '<select name="address_" class="diachi form-control form-control-sm" required>';
+                        if (count($rows_vAdress)>0){
+                            
+                            foreach ( $rows_vAdress as $row_address ) {
+                                echo '<option value="'.$row_address['id'].'">'.$row_address['detail']."-".$row_address['wards']."-".$row_address['district']."-".$row_address['city'].'</option>';
+                            }
+                           
+                        }
+                        echo " </select>";
+                        if (count($rows_vAdress)>0){
+                            echo '<div class="info_address">
+                            <p><b>Tên: </b>'.$rows_vAdress[0]['fullname'].'</p>
+                            <p><b>Số Điện Thoại: </b>'.$rows_vAdress[0]['phone'].'</p>
+                            <p><b>Địa Chỉ: </b>'.$rows_vAdress[0]['detail']."-".$rows_vAdress[0]['wards']."-".$rows_vAdress[0]['district']."-".$rows_vAdress[0]['city'].'</p>
+                            </div>';
+                            echo "";
+                        }
                         echo '
-                        <button>Đặt hàng</button>
+                        <input type="submit" name="buy" value="Đặt hàng"></form>
                     </div> 
                 </div>
             ';
@@ -79,3 +102,55 @@ echo "<b>TỔNG: ".($sotien)." VNĐ</b>";
     }
    
 ?>
+<?php
+if (isset($_POST['buy'])){
+    print_r($_POST);
+    if (isset($_POST['address_'])){
+        if (count($_SESSION['cart'])>0){
+        require "pdo.php";
+        $sql_buy = 'INSERT INTO `order`(`idUser`, `listProduct`, `idAddress`, `totalPrice`) VALUES (:idUser, :list, :idAddress, :total)';
+                        $stmt_buy = $pdo->prepare($sql_buy);
+                        $stmt_buy->execute(array(':idUser' =>$_SESSION['user_id'],
+                                                ':list'=>json_encode($_SESSION['cart']),
+                                                ':idAddress'=>$_POST['address_'],
+                                                ':total'=>$sotien
+                                                ));
+                                                print_r($stmt_buy);
+                                                unset($_SESSION['cart']);
+                                                unset($_SESSION['json']);
+                                                header( 'Location: ./index.php' ) ;
+     return;
+                                            }                                 
+    }
+    else{
+        echo "Vui lòng chọn địa chỉ";
+    }
+    // 
+}
+?>
+<script>
+    String.prototype.allTrim = String.prototype.allTrim ||
+     function(){
+        return this.replace(/\s+/g,' ')
+                   .replace(/^\s+|\s+$/,'');
+     };
+    $(document).ready(function(e){
+        $.getJSON( "api/city_api.php", function(e) {
+            for (var i=0;i<e.length;i++){
+               $('.city').append(`<option value="${e[i]['id']}"> 
+                                        ${e[i]['name']} 
+                                    </option>`); 
+            }
+        })
+    })
+
+         $(".diachi").change(function(e){
+        $.getJSON( `api/address_api.php?idaddress=${$('.diachi').val()}`, function(e) {
+            $('.info_address').empty();
+            $('.info_address').append(` <p><b>Tên: </b>${e[0]['fullname']}</p>
+                      <p><b>Số Điện Thoại: </b>${e[0]['phone']}</p>
+                      <p><b>Địa Chỉ: </b>${e[0]['address']}</p>
+                      `); 
+        })
+    })
+                      </script>
