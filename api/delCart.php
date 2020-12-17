@@ -20,12 +20,12 @@
                         $dem=0;
                     }
                 }
-                // $_SESSION['json']=$arr_new; 
-                print_r($arr_new);
+                $_SESSION['json']=$arr_new; 
+                //print_r($arr_new);
         }
         
-        // header( 'Location: ./index.php' ) ;
-        // return;
+        header( 'Location: ./index.php' ) ;
+         return;
     }
 
 ?>

@@ -56,3 +56,14 @@ VALUES
     "iPhone 7 là chiếc smartphone có thiết kế kim loại nguyên khối cuối cùng của Apple, nhưng đồng thời lại sở hữu “hàng tá” tính năng mới xuất hiện lần đầu như: nút home cảm ứng lực, khả năng kháng bụi nước, âm thanh stereo 2 kênh. Và đặc biệt, hiệu năng từ con chip A10 Fusion vẫn tỏ ra rất ổn định ở thời điểm hiện tại.",
     99,
     1)
+
+    INSERT INTO 
+    `product`
+    (`name`, `image`, `price`, `describe`, `warehouse`, `categoryId`) 
+VALUES
+    ("Xiaomi Mi Note 10 Lite",
+    "https://cdn.tgdd.vn/Products/Images/42/220851/xiaomi-mi-note-10-lite-fix-chitiet-400x460.png",
+    "9490000",
+    "Xiaomi Mi Note 10 Lite là điện thoại thông minh thế hệ Mi Note tiếp theo vừa được Xiaomi chính thức ra mắt vào tháng 5/2020. Máy sở hữu nhiều trang bị hấp dẫn với bộ 4 camera lên đến 64 MP, thiết kế thời trang cùng màn hình AMOLED cong 3D quyến rũ.",
+    99,
+    1)
