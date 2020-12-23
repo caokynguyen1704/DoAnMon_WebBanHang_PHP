@@ -1,5 +1,4 @@
-<script src="../js/jquery-3.5.1.min.js"></script>
-<link rel="stylesheet" href="../css/bootstrap.min.css">
+
 <form method="POST">
 <div class="form-group form-control-sm">
     <label>Họ Tên Người Nhận</label>

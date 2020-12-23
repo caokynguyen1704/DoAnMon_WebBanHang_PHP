@@ -28,7 +28,13 @@
 <!-- https://app.smartsupp.com/app/dashboard/conversations/coHyYWWWzHk18 -->
 </head>
 <body>
-
+<div class="alert_container">
+        <center>
+            <br><img src="img/logo.png" width="80%"><br>
+            Thiết bị không được hỗ trợ.
+        </center>
+    </div>
+    <div class="pc_container">
 <?php require 'api/loadRole.php'; ?>
 <?php include 'api/nav.php'; ?>
 <?php 
@@ -65,6 +71,7 @@ else{
     }
 
 ?>
+</div>
 </body>
 </html>
 <?php ob_flush(); ?>

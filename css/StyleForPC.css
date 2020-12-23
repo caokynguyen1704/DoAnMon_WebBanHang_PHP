@@ -20,3 +20,14 @@
         display: none;
     }
 }
+
+@media (max-width: 1199.98px) {
+	.pc_container{
+		display: none;
+	}
+}
+@media (min-width: 1199.99px) {
+	.alert_container{
+		display: none;
+	}
+}
