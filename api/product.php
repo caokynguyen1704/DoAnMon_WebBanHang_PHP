@@ -18,12 +18,15 @@
     if (count($rows)==0){
         echo "Không tìm thấy sản phẩm";
     }else{
+        ECHO '<form method="POST">';
         if (isset($_SESSION['role'])){
             if ($_SESSION['role']==1){
-                echo '<button type="submit" name="delProduct" class="btn btn-danger">X</button>';
+                echo '<button type="submit" name="delProduct" class="btn btn-danger">Xóa</button>';
             }
         }
         echo '<div class="container">
+    
+
         <img src="'.$rows[0]["image"].'" width="40%" height="80%" style="float: left;"/>
         <div class="container">
             <center><h1>'. $rows[0]["name"] .'</h1></center>
@@ -33,7 +36,7 @@
             <h6><b>TRONG KHO:   </b>'. $rows[0]["warehouse"].'</h6>
             <h6><b>Miêu tả:</b></h6>
             <p>'. $rows[0]["describe"].'</p>
-            <form method="POST">
+           
             <input type="hidden" name="productAdd" value="1"/>
             <button type="submit" name="add" class="btn btn-primary btn-block ';
             if ($rows[0]["warehouse"]==0){
@@ -43,9 +46,11 @@
             echo'"><i class="fa fa-cart-plus fa-2x" aria-hidden="true"></i></button>
             ';
             
-            echo '</form>
+            echo '
         </div>
-        </div>';
+        
+        </div>
+        </form>';
     }
 ?>
 
