@@ -32,9 +32,14 @@
   <br>
   <div class="form-group">
     <label>Hình Ảnh (URL)</label>
-    <input type="text" class="form-control form-control-sm" name="picture" required>
+    <input id="input" type="text" class="form-control form-control-sm" name="picture" required>
+    <img src="#" id="pic" height="180px"/>
   </div>
-
+          <script>
+            $("#input").change(function(e){
+              $("#pic").attr("src",$("#input").val());
+            });
+          </script>
   <div class="form-group">
     <label>Miêu tả chi tiết</label>
     <input type="text" class="form-control form-control-sm" name="detail" required>
