@@ -37,7 +37,7 @@
                 $stmt=$pdo->prepare($sql);
                 $stmt->execute(array(
                     ':user'=>$_POST['username'],
-                    ':pass'=>$_POST['password']
+                    ':pass'=>md5($_POST['password'])
                 ));
                 $rows=$stmt->fetchAll();
                 if(count($rows)==1){

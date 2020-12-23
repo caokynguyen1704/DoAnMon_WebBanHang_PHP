@@ -46,7 +46,7 @@
                     $stmt_su=$pdo->prepare($sql_su);
                     $stmt_su->execute(array(
                         ':user_su'=>$_POST['username_su'],
-                        ':pass_su'=>$_POST['password_su']
+                        ':pass_su'=>md5($_POST['password_su'])
                     ));
                     header( 'Location: ./index.php' ) ;
                     return;
